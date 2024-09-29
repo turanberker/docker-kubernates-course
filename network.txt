@@ -1,5 +1,10 @@
  docker build -t favorites-node .
 
- docker run --name favorites -d --rm -p 3000:3000 favorites-node
+ docker run --name favorites -d --rm -p 3000:3000  --network favorites-net favorites-node
 
  container 'ın host machine de çalışan servislere ulaşabilmesi için 'docker.host.internal' kullanılabilir
+
+docker network create favorites-net
+docker run -d --name mongodb --network favorites-net mongo
+
+Aynı network içindeki containelar birbirlerini container isimleriyle bulurlar.Portları expose edilmek zorunda değil
