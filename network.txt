@@ -2,7 +2,7 @@
 
  docker run --name favorites -d --rm -p 3000:3000  --network favorites-net favorites-node
 
- container 'ın host machine de çalışan servislere ulaşabilmesi için 'docker.host.internal' kullanılabilir
+ container 'ın host machine de çalışan servislere ulaşabilmesi için 'host.docker.internal' kullanılabilir
 
 docker network create favorites-net
 docker run -d --name mongodb --network favorites-net mongo
