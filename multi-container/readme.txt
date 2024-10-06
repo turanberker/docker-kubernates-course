@@ -16,4 +16,8 @@ docker run --name goals-frontend --rm -d  -p 3000:3000 -it goals-react
 
 docker network create goals-network
 
-docker run mongo
+docker run -d --name mongodb --network goals-network mongo
+
+docker run --name goals-backend --rm -d --network goals-network -p 80:80 goals-node
+
+docker run --name goals-frontend --rm -d  -p 3000:3000 -it goals-react
