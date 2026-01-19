@@ -1,3 +1,4 @@
 **/node_modules
 */dist/
 /multi-container/backend/logs/
+/laravel-01-added-nginx/src
