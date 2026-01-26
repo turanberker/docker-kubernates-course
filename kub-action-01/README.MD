@@ -31,3 +31,14 @@ kubectl rollout undo deployment/first-app --to-revision=5 -->spesific revision a
 
 kubectl delete service first-app 
 kubectl delete deployment first-app 
+
+
+---DECLERATIVE APPROACT---
+minicube start --driver=hyperv
+
+kubectl apply -f deployment.yml
+kubectl apply -f service.yml
+
+kubectl get services komutu ile servisleri alırsın
+servis de Loadbalancer olan servis'in adını 
+minikube start <nameOfService> ---> 
