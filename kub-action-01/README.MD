@@ -25,20 +25,19 @@ kubectl rollout undo deployment/first-app -->rollback yapmak için
 
 kubectl rollout history deployment/first-app -->Tüm deployment revizyonlarını görmek için
 
-kubectl rollout history deployment/first-app --revision=3  --> Revizyon detayını görmek için
+kubectl rollout history deployment/first-app --revision=3 --> Revizyon detayını görmek için
 
 kubectl rollout undo deployment/first-app --to-revision=5 -->spesific revision a gönmek için
 
-kubectl delete service first-app 
-kubectl delete deployment first-app 
-
+kubectl delete service first-app
+kubectl delete deployment first-app
 
 ---DECLERATIVE APPROACT---
-minicube start --driver=hyperv
+minikube start --driver=hyperv
 
-kubectl apply -f deployment.yml
-kubectl apply -f service.yml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
 
 kubectl get services komutu ile servisleri alırsın
-servis de Loadbalancer olan servis'in adını 
-minikube start <nameOfService> ---> 
+servis de Loadbalancer olan servis'in adını
+minikube service <nameOfService> --->
