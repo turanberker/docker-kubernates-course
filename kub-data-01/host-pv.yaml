@@ -3,11 +3,12 @@ kind: PersistentVolume
 metadata:
   name: host-pv
 spec:
-  capacity: 
+  capacity:
     storage: 1Gi
   volumeMode: Filesystem
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
-  hostPath: 
+  hostPath:
     path: /data
     type: DirectoryOrCreate
