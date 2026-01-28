@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: story-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: story
@@ -17,7 +17,11 @@ spec:
           image: berkerturan/kube-data-stories:2
           env:
             - name: STORY_FOLDER
-              value: 'story'
+              # value: 'story'
+              valueFrom:
+                configMapKeyRef:
+                  name: data-store-env
+                  key: folder
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
@@ -27,5 +31,5 @@ spec:
           # hostPath:
           #   path: /data
           #   type: DirectoryOrCreate
-          persistentVolumeClaim: 
+          persistentVolumeClaim:
             claimName: host-pvc
