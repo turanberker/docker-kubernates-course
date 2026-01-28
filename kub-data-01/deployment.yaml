@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: story
-          image: berkerturan/kube-data-stories:1
+          image: berkerturan/kube-data-stories:2
+          env:
+            - name: STORY_FOLDER
+              value: 'story'
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
